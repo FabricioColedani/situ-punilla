@@ -1,2 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Importamos la fuente 'Inter' (letras) y los 'Material Icons' (iconos) desde Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* 2. Reseteo global para que la app se vea igual en todos los celulares */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Aplicamos la fuente a todo el cuerpo de la aplicación */
+body, html {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  
+  /* Esto asegura que la Navbar y el Footer no tapen el contenido */
+  min-height: 100vh;
+}
+
+/* 4. Opcional: Arreglamos la alineación vertical de los iconos */
+.material-icons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
