@@ -1,0 +1,30 @@
+/* Limpieza inicial necesaria */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc; /* Fondo gris claro ideal para la lectura de datos */
+  color: #0f172a;
+}
+
+/* --- COMPENSACIÓN CRÍTICA DE CAPAS (LAYOUT SEGURO) --- */
+.app-main-content {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  
+  /* En móviles: Deja un espacio libre arriba de 60px y abajo de 65px */
+  padding-top: 60px;
+  padding-bottom: 75px; 
+  
+  /* Garantiza que si una sección tiene poco contenido, el footer en desktop no flote */
+  min-height: calc(100vh - 60px); 
+}
+
+/* En Escritorio: Eliminamos el espacio inferior fijo ya que el footer vuelve a ser estático */
+@media (min-width: 768px) {
+  .app-main-content {
+    padding-bottom: 0;
+    min-height: calc(100vh - 220px); /* Ajuste estimado de altura según contenido del footer */
+  }
+}

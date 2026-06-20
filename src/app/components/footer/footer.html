@@ -1,1 +1,71 @@
-<p>footer works!</p>
+<footer class="footer">
+  
+  <nav class="mobile-tab-bar" aria-label="Navegación rápida inferior">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="tab-item">
+      <span class="material-icons tab-icon">home</span>
+      <span class="tab-label">Inicio</span>
+    </a>
+    <a routerLink="/sobre-nosotros" routerLinkActive="active" class="tab-item">
+      <span class="material-icons tab-icon">corporate_fare</span>
+      <span class="tab-label">Institución</span>
+    </a>
+    <a routerLink="/servicios" routerLinkActive="active" class="tab-item-center">
+      <div class="center-fab-icon">
+        <span class="material-icons">schedule</span>
+      </div>
+      <span class="tab-label">Horarios</span>
+    </a>
+    <a routerLink="/blog" routerLinkActive="active" class="tab-item">
+      <span class="material-icons tab-icon">newspaper</span>
+      <span class="tab-label">Blog</span>
+    </a>
+    <a routerLink="/contacto" routerLinkActive="active" class="tab-item">
+      <span class="material-icons tab-icon">chat_bubble</span>
+      <span class="tab-label">Contacto</span>
+    </a>
+  </nav>
+
+  <div class="desktop-footer-container">
+    <div class="footer-grid">
+      
+      <div class="footer-col-brand">
+        <div class="footer-logo">
+          <span class="material-icons">directions_bus</span>
+          <span>App SiTu</span>
+        </div>
+        <p class="footer-description">
+          Sistema de Información de Transporte Urbano del Valle de Punilla. Centralizando datos en tiempo real para optimizar la previsibilidad de tus traslados.
+        </p>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-title">Plataforma</h4>
+        <ul class="footer-links-list">
+          <li><a routerLink="/">Inicio General</a></li>
+          <li><a routerLink="/sobre-nosotros">Sobre el Equipo</a></li>
+          <li><a routerLink="/servicios">Líneas y Recorridos de Punilla</a></li>
+          <li><a routerLink="/blog">Novedades y Estados del Servicio</a></li>
+          <li><a routerLink="/contacto">Atención al Pasajero</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-info">
+        <h4 class="footer-title">Información de Utilidad</h4>
+        <p class="footer-info-text">
+          📍 Diseñado para Residentes y Turistas de la Región de Punilla, Córdoba.
+        </p>
+        <p class="footer-info-text">
+          ♿ Consulta adaptada para garantizar accesibilidad digital integral.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-container">
+      <p>&copy; 2026 Sistema de Información de Transporte Urbano (SITU). Todos los derechos reservados.</p>
+    </div>
+  </div>
+
+</footer>
