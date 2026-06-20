@@ -1,0 +1,211 @@
+/* --- VISTA MOBILE-FIRST: SISTEMA DE BOTONES DE APLICACIÓN NATIVA --- */
+.footer {
+  box-sizing: border-box;
+}
+
+.mobile-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom); /* Soporte para zonas seguras de iPhone */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #64748b; /* Gris intermedio de contraste correcto */
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  transition: color 0.2s ease;
+  gap: 2px;
+}
+
+.tab-icon {
+  font-size: 1.4rem;
+}
+
+.tab-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Enlace Activo del menú inferior */
+.tab-item.active {
+  color: #0f172a; /* Color marino destacado */
+}
+.tab-item.active .tab-icon {
+  color: #0284c7; /* Icono en azul transporte nítido */
+}
+
+/* Ítem Central Especial (Llamada a la Acción de Horarios - Regla del Pulgar Cómoda) */
+.tab-item-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #64748b;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateY(-10px); /* Eleva un poco el ítem central */
+}
+
+.center-fab-icon {
+  width: 46px;
+  height: 46px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.center-fab-icon .material-icons {
+  font-size: 1.5rem;
+}
+
+.tab-item-center.active .center-fab-icon {
+  background-color: #0284c7;
+}
+.tab-item-center.active {
+  color: #0284c7;
+}
+
+/* Ocultar elementos de escritorio por defecto */
+.desktop-footer-container, .footer-bottom {
+  display: none;
+}
+
+/* --- ADAPTACIÓN A VISTA DE ESCRITORIO --- */
+@media (min-width: 768px) {
+  /* Ocultamos la barra inferior móvil */
+  .mobile-tab-bar {
+    display: none;
+  }
+
+  /* Activamos y estilizamos el footer clásico */
+  .footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 48px 0 0 0;
+    display: block;
+    width: 100%;
+  }
+
+  .desktop-footer-container {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Grid de tres columnas balanceado */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo .material-icons {
+    color: #38bdf8;
+    font-size: 1.8rem;
+  }
+
+  .footer-description {
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .footer-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* Pequeña línea estética de acento bajo el título de la sección */
+  .footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #38bdf8;
+  }
+
+  .footer-links-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links-list li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .footer-links-list a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+  }
+
+  .footer-info-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  /* Sección de Copyright final */
+  .footer-bottom {
+    display: block;
+    background-color: #0b1224;
+    padding: 20px 0;
+    border-top: 1px solid #1e293b;
+  }
+
+  .footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
