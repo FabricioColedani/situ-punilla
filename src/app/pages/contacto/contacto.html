@@ -1,1 +1,103 @@
-<p>contacto works!</p>
+
+<div class="contact-container">
+  
+  <header class="contact-header">
+    <h1 class="page-title">Contacto</h1>
+    <p class="page-subtitle">
+      ¿Tenés alguna sugerencia, reclamo o consulta sobre el transporte en Punilla? Escribinos y te responderemos a la brevedad.
+    </p>
+  </header>
+
+  <div class="contact-content">
+    
+    <section class="form-section">
+      
+      @if (enviado) {
+        <div class="success-alert">
+          <span class="material-icons">check_circle</span>
+          <p>¡Gracias por escribirnos! Tu mensaje ha sido enviado correctamente.</p>
+        </div>
+      }
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        
+        <div class="input-group">
+          <label for="nombre">Nombre Completo</label>
+          <input type="text" id="nombre" formControlName="nombre" placeholder="Ej: Juan Pérez">
+          @if (f['nombre'].invalid && (f['nombre'].dirty || f['nombre'].touched)) {
+            <span class="error-text">El nombre es obligatorio.</span>
+          }
+        </div>
+
+        <div class="input-group">
+          <label for="email">Correo Electrónico</label>
+          <input 
+            type="email" 
+            id="email" 
+            formControlName="email" 
+            placeholder="ejemplo@correo.com"
+            inputmode="email"
+          >
+          @if (f['email'].invalid && (f['email'].dirty || f['email'].touched)) {
+            @if (f['email'].errors?.['required']) {
+              <span class="error-text">El correo es obligatorio.</span>
+            }
+            @if (f['email'].errors?.['email']) {
+              <span class="error-text">Ingresá un correo válido (ej: nombre@dominio.com).</span>
+            }
+          }
+        </div>
+
+        <div class="input-group">
+          <label for="mensaje">Tu Mensaje</label>
+          <textarea 
+            id="mensaje" 
+            formControlName="mensaje" 
+            rows="5" 
+            placeholder="Escribí tu consulta acá..."
+          ></textarea>
+          @if (f['mensaje'].invalid && (f['mensaje'].dirty || f['mensaje'].touched)) {
+            @if (f['mensaje'].errors?.['required']) {
+              <span class="error-text">El mensaje no puede estar vacío.</span>
+            }
+            @if (f['mensaje'].errors?.['minlength']) {
+              <span class="error-text">El mensaje debe tener al menos 10 caracteres.</span>
+            }
+          }
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
+          <span class="material-icons">send</span>
+          Enviar Mensaje
+        </button>
+
+      </form>
+    </section>
+
+    <section class="direct-contact-section">
+      <h3>Vías Directas de Comunicación</h3>
+      
+      <ul class="contact-list">
+        <li>
+          <span class="material-icons list-icon">place</span>
+          <div class="list-info">
+            <strong>Ubicación</strong>
+            <span>Valle de Punilla, Córdoba, Argentina</span>
+          </div>
+        </li>
+        <li>
+          <span class="material-icons list-icon">mail</span>
+          <div class="list-info">
+            <strong>Email de Soporte</strong>
+            <span>soporte&#64;appsitu.com</span> </div>
+        </li>
+      </ul>
+
+      <a href="https://wa.me/5493541000000?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20transporte%20en%20Punilla." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        <span class="material-icons">chat</span>
+        Chatear por WhatsApp
+      </a>
+    </section>
+
+  </div>
+</div>
