@@ -1,1 +1,58 @@
 <p>blog works!</p>
+<div class="blog-container">
+      
+  <header class="blog-header">
+    <h1 class="page-title">Novedades del Servicio</h1>
+    <p class="page-subtitle">Información actualizada sobre el transporte en Punilla.</p>
+  </header>
+
+  <nav class="filter-container">
+    <div class="filter-scroll">
+      @for (filtro of filtros; track filtro) {
+        <button 
+          class="filter-btn" 
+          [class.active]="filtroActivo === filtro"
+          (click)="filtrarPor(filtro)">
+          {{ filtro }}
+        </button>
+      }
+    </div>
+  </nav>
+
+  <main class="feed-grid">
+    @for (item of novedadesFiltradas; track item.id) {
+      <article class="news-card">
+        
+        <div class="card-image-wrapper">
+          <img [src]="item.imagen" [alt]="item.titulo" class="card-image">
+          <span class="category-badge" [class]="getBadgeClass(item.categoria)">
+            {{ item.categoria }}
+          </span>
+        </div>
+        
+        <div class="card-content">
+          <span class="news-date">{{ item.fecha }}</span>
+          <h2 class="news-title">{{ item.titulo }}</h2>
+          
+          <p class="news-excerpt">
+            {{ item.expandido ? item.textoCompleto : item.extracto }}
+          </p>
+          
+          <button type="button" class="read-more-btn" (click)="toggleExpandir(item)">
+            {{ item.expandido ? 'Leer menos' : 'Leer más' }}
+            <span class="material-icons arrow-icon">
+              {{ item.expandido ? 'expand_less' : 'expand_more' }}
+            </span>
+          </button>
+        </div>
+        
+      </article>
+    } @empty {
+      <div class="empty-state">
+        <span class="material-icons empty-icon">inbox</span>
+        <p>No hay novedades para esta categoría en este momento.</p>
+      </div>
+    }
+  </main>
+
+</div>
