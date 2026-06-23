@@ -4,7 +4,7 @@ import { SobreNosotros } from './pages/sobre-nosotros/sobre-nosotros';
 import { Servicios} from './pages/servicios/servicios';
 import { Galeria } from './pages/galeria/galeria';
 import { Blog } from './pages/blog/blog';
-import { Contacto} from './pages/contacto/contacto';
+import { Contacto } from './pages/contacto/contacto';
 
 export const routes: Routes = [
   { path: '', component: Inicio }, // Ruta por defecto (Home)

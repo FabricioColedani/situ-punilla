@@ -66,9 +66,11 @@
           }
         </div>
 
-        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
-          <span class="material-icons">send</span>
-          Enviar Mensaje
+        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || cargando">
+          <span class="material-icons">
+            {{ cargando ? 'hourglass_top' : 'send' }}
+          </span>
+          {{ cargando ? 'Enviando...' : 'Enviar Mensaje' }}
         </button>
 
       </form>
@@ -93,7 +95,7 @@
         </li>
       </ul>
 
-      <a href="https://wa.me/5493541000000?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20transporte%20en%20Punilla." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      <a href="https://wa.me/5493548439081?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20transporte%20en%20Punilla." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
         <span class="material-icons">chat</span>
         Chatear por WhatsApp
       </a>
