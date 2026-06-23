@@ -34,7 +34,7 @@ export class Blog implements OnInit {
       extracto: 'A partir del 1 de Julio entran en vigencia las frecuencias de invierno. Habrá un refuerzo de unidades en horario escolar (07:00hs y 13:00hs).',
       fecha: '20 Jun 2026',
       categoria: 'Horarios',
-      imagen: 'https://images.unsplash.com/photo-1506751470038-d523615f1110?auto=format&fit=crop&q=80&w=800'
+      imagen: 'https://cdn.milenio.com/uploads/media/2020/09/14/cambio-de-horario-invierno-shutterstock_0_0_1200_747.jpg'
     },
     {
       id: 3,
