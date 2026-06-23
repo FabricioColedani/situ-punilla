@@ -196,9 +196,9 @@
 }
 
 .tab-btn.active {
-  background-color: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: #0284c7;
+    border-color: var(--color-primary);
 }
 
 /* --- LA SOLUCIÓN AL SCROLL DEL MAPA --- */
